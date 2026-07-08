@@ -33,7 +33,13 @@ export default function ScoreHistory() {
     fetchScores();
   }, [currentUser]);
 
-  if (loading) return null;
+  if (loading) {
+    return (
+      <div className="mt-4 w-full max-w-sm mx-auto text-center text-xs text-amber-700">
+        載入紀錄中...
+      </div>
+    );
+  }
   if (records.length === 0) return null;
 
   return (
